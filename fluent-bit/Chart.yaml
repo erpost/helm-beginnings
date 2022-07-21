@@ -1,0 +1,4 @@
+apiVersion: v1
+name: fluent-bit
+version: 0.1.0
+description: Helm Chart for Fluent-bit Daemonset

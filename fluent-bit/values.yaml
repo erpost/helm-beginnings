@@ -1,0 +1,27 @@
+namespace:
+  name: amazon-cloudwatch
+serviceaccount:
+  name: fluent-bit
+clusterrole:
+  name: fluent-bit-role
+clusterrolebinding:
+  name: fluent-bit-role-binding
+podsecuritypolicy:
+  name: fluentbit-psp
+configmap:
+  fbinfo:
+    name: fluent-bit-cluster-info
+    item: blue
+  fbconfig:
+    name: fluent-bit-config
+  region: us-gov-east-1
+daemonset:
+  name: fluent-bit
+  image: public.ecr.aws/aws-observability/aws-for-fluent-bit:latest
+  memory_limit: 200Mi
+  cpu: 200m
+  memory_request: 100Mi
+labels:
+  app_name: fluent-bit
+  version: v1
+  cluster_svc: true
