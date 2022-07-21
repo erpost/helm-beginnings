@@ -1,0 +1,18 @@
+namespace:
+  name: amazon-cloudwatch
+serviceaccount:
+  name: cloudwatch-agent
+clusterrole:
+  name: cwagent-role
+clusterrolebinding:
+  name: cwagent-role-binding
+podsecuritypolicy:
+  name: cwagent-psp
+configmap:
+  name: cwagentconfig
+daemonset:
+  name: cloudwatch-agent
+  image: public.ecr.aws/cloudwatch-agent/cloudwatch-agent:latest
+  memory_limit: 200Mi
+  cpu: 200m
+  memory_request: 200Mi

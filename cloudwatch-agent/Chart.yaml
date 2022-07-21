@@ -1,0 +1,4 @@
+apiVersion: v1
+name: cloudwatch-agent
+version: 0.1.0
+description: Daemon Set for Cloudwatch Agent
